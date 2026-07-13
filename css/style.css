@@ -1,0 +1,177 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #a0a0a0;
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/* About Section */
+.about-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(18,18,18,1)), url('../images/profile.jpg') no-repeat center center/cover;
+}
+
+.about-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #cccccc;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #888888;
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: none;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 6rem 4rem;
+}
+
+.gallery-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Album Grid Layout */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.album-card {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #1a1a1a;
+}
+
+.album-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.album-card:hover .album-image {
+    transform: scale(1.05);
+}
+
+/* Hover Overlay Effect */
+.album-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.album-card:hover .album-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.album-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #555555;
+    font-size: 0.85rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 2rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    nav a {
+        margin: 0 1rem;
+    }
+    .about-content h1 {
+        font-size: 2.5rem;
+    }
+    .quote {
+        font-size: 1.2rem;
+    }
+    .gallery-section {
+        padding: 4rem 2rem;
+    }
+}
